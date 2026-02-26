@@ -1,0 +1,114 @@
+{
+  "last_updated_utc": "2026-02-26T00:00:00Z",
+  "links": [
+    {
+      "href": "https://sites.google.com/view/regsense-dashboard?usp=sharing",
+      "label": "(legacy) Google Site"
+    },
+    {
+      "href": "https://docs.google.com/spreadsheets/d/1McyxQjH9KMlun6LK5fWe7R4F3WYKKBtqrBScYj3GmLU/edit",
+      "label": "(legacy) Kanban sheet"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "RS-001",
+      "project": "RegSense",
+      "workstream": "Buttons workflow",
+      "title": "Identify enqueue/publisher path so submitter actions trigger worker pipeline (JOB_DONE ok=true)",
+      "status": "Blocked",
+      "priority": "P0",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Need to locate enqueue path in regsense-sa; success signal exists but not produced from buttons",
+      "links": []
+    },
+    {
+      "task_id": "RS-002",
+      "project": "RegSense",
+      "workstream": "Buttons workflow",
+      "title": "Add self-serve diagnostics for valid submission_id + winner_job_id pairs",
+      "status": "Next",
+      "priority": "P0",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "",
+      "links": []
+    },
+    {
+      "task_id": "RS-003",
+      "project": "RegSense",
+      "workstream": "Ops",
+      "title": "Publish regsense-landing on GitHub Pages (coming soon + waitlist)",
+      "status": "Next",
+      "priority": "P2",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Need GitHub repo + Pages enabled",
+      "links": []
+    },
+    {
+      "task_id": "PTR-001",
+      "project": "personal-trading-review",
+      "workstream": "Policy",
+      "title": "Decide source-of-truth: GitHub vs Drive. Keep canonical MD and changelog.",
+      "status": "Doing",
+      "priority": "P0",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "",
+      "links": []
+    },
+    {
+      "task_id": "PTR-002",
+      "project": "personal-trading-review",
+      "workstream": "Policy engine",
+      "title": "Implement remaining clauses: MNPI attestation (fail-closed), exemptions, holdings-based short detection",
+      "status": "Next",
+      "priority": "P0",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Need UI fields + schema for attestations",
+      "links": []
+    },
+    {
+      "task_id": "PTR-003",
+      "project": "personal-trading-review",
+      "workstream": "Sheets-only UI",
+      "title": "Implement HTTP endpoints + Apps Script menus/buttons",
+      "status": "Blocked",
+      "priority": "P0",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Blocked on PTR_API_BASE_URL + API key strategy + deployment",
+      "links": []
+    },
+    {
+      "task_id": "PTR-004",
+      "project": "personal-trading-review",
+      "workstream": "Drive submissions",
+      "title": "Ingest employee submissions from Drive folder (per-employee subfolders)",
+      "status": "Next",
+      "priority": "P1",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Need deterministic mapping: subfolder -> employee email",
+      "links": []
+    },
+    {
+      "task_id": "PTR-005",
+      "project": "personal-trading-review",
+      "workstream": "Statements (PDF)",
+      "title": "Template YAML + deterministic parser for CIBC IE PDF to StatementTrade",
+      "status": "Next",
+      "priority": "P1",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "Template-driven parsing; fail-closed when template missing",
+      "links": []
+    },
+    {
+      "task_id": "PTR-006",
+      "project": "personal-trading-review",
+      "workstream": "Reconciliation",
+      "title": "Add compliance review for reconciliation findings + write back to Sheets",
+      "status": "Next",
+      "priority": "P2",
+      "owner_email": "dlgparkhaven@gmail.com",
+      "blocker": "",
+      "links": []
+    }
+  ]
+}

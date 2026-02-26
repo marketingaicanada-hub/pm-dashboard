@@ -1,0 +1,13 @@
+flowchart LR
+  A[Employee Submissions
+(Google Sheets / Drive)] --> B[PTR API (FastAPI)]
+  B --> C[SQLite System-of-Record]
+  B --> D[Policy Engine]
+  D -->|auto-approve / review / reject| C
+  E[Statements
+(PDF/CSV in Drive)] --> F[Ingestion + Artifact Capture (sha256)]
+  F --> C
+  C --> G[Reconciliation Findings]
+  G --> H[Compliance Decisions]
+  H --> C
+  C --> I[Writeback to Sheets]

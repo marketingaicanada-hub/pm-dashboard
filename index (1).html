@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Dashboard</title>
+  <meta name="description" content="Private project dashboard (Kanban + diagrams)." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header class="wrap header">
+    <div class="brand">
+      <div class="logo">PM</div>
+      <div>
+        <div class="name">Project Dashboard</div>
+        <div class="tag">Kanban · Diagrams · Private (Cloudflare Access)</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#kanban">Kanban</a>
+      <a href="#diagrams">Diagrams</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Work tracking across RegSense + personal-trading-review</h1>
+      <p class="sub">Source of truth: <code>data/tasks.json</code>. Edit via PRs. Protected by Cloudflare Access (Google login + allowlist).</p>
+      <div class="meta" id="meta"></div>
+    </section>
+
+    <section id="kanban" class="section">
+      <h2>Kanban</h2>
+      <div class="board" id="board"></div>
+    </section>
+
+    <section id="diagrams" class="section">
+      <h2>Diagrams</h2>
+      <p class="muted">Mermaid diagrams (rendered client-side). Edit in <code>diagrams/*.mmd</code>.</p>
+
+      <div class="card">
+        <h3>RegSense end-to-end</h3>
+        <pre class="mermaid" id="mmd-regsense"></pre>
+      </div>
+
+      <div class="card">
+        <h3>personal-trading-review end-to-end</h3>
+        <pre class="mermaid" id="mmd-ptr"></pre>
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <h2>Links</h2>
+      <ul class="links" id="linksList"></ul>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Project Dashboard</div>
+      <div class="muted">Static site (GitHub Pages) + Cloudflare Access (Google allowlist)</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+</html>

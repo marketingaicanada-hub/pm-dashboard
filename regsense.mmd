@@ -1,0 +1,11 @@
+flowchart LR
+  A[Apps Script Buttons / Sidebar] -->|HTTPS POST| B[Webhook Front Door]
+  B -->|Auth: X-RegSense-Token| C[regsense-webhook.service]
+  C --> D[RBAC Policy (GCS-backed)]
+  D -->|allow| E[Governance Handlers]
+  E --> F[Firestore Append-only Ledger]
+  E --> G[Sheets Logging]
+  E --> H[Job Enqueue (TBD path)]
+  H --> I[Worker Pipeline]
+  I --> J[JOB_DONE(ok=true) Event]
+  J --> F
